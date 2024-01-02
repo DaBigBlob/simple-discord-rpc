@@ -1,5 +1,5 @@
 [package]
-name = "discord-rpc"
+name = "simple-discord-rpc"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 discord-rich-presence = "0.2.3"
+clap = {version = "4.4.10", features = ["derive"] }
