@@ -51,8 +51,8 @@ fn main() {
     };
     
     match client.set_activity(activity::Activity::new()
-    .state(&args.state.unwrap_or("default state".to_string()))
-    .details(&args.details.unwrap_or("default details".to_string()))
+    .state(&args.state.unwrap_or("memes".to_string()))
+    .details(&args.details.unwrap_or("just memes".to_string()))
     // .buttons(vec![activity::Button::new(
     //     "A button",
     //     "https://github.com",
@@ -62,7 +62,7 @@ fn main() {
             .large_image(&args.large_image_key.unwrap_or("https://i.imgflip.com/3ldvwo.jpg".to_string()))
             .large_text(&args.large_image_text.unwrap_or("deault juice".to_string()))
             .small_image(&args.small_image_key.unwrap_or("https://pluspng.com/img-png/meme-png--800.png".to_string()))
-            .small_text(&args.small_image_text.unwrap_or("skdhsdh".to_string()))
+            .small_text(&args.small_image_text.unwrap_or("honk".to_string()))
     )) {
         Err(er) => {
             println!("[ER] {}", er.to_string());
