@@ -56,10 +56,10 @@ fn main() {
     // )])
     .assets(
         activity::Assets::new()
-            .large_image(&args.large_image_key.unwrap_or("https://www.rust-lang.org/static/images/rust-logo-blk.png".to_string()))
-            .large_text(&args.large_image_text.unwrap_or("made with rust".to_string()))
-            .small_image(&args.small_image_key.unwrap_or("https://www.rust-lang.org/static/images/rust-logo-blk.png".to_string()))
-            .small_text(&args.small_image_text.unwrap_or("made with rust".to_string()))
+            .large_image(&args.large_image_key.unwrap_or("https://i.imgflip.com/3ldvwo.jpg".to_string()))
+            .large_text(&args.large_image_text.unwrap_or("deault juice".to_string()))
+            .small_image(&args.small_image_key.unwrap_or("https://pluspng.com/img-png/meme-png--800.png".to_string()))
+            .small_text(&args.small_image_text.unwrap_or("skdhsdh".to_string()))
     )) {
         Err(er) => {
             print!("{}", er.to_string());
