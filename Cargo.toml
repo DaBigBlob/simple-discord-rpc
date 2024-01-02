@@ -1,6 +1,6 @@
 [package]
 name = "simple-discord-rpc"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["DaBigBlob <research@0x000.io>"]
 description = "Simple cross-platform discord RPC CLI."
