@@ -32,19 +32,22 @@ fn main() {
     let mut client = match DiscordIpcClient::new(
         &args.client_id.unwrap_or("1191646640000487476".to_string())
     ) {
-        Ok(c) => c,
+        Ok(c) => {
+            println!("[OK] Connected to application.");
+            c
+        },
         Err(er) => {
-            print!("{}", er.to_string());
+            print!("[ER] {}", er.to_string());
             std::process::exit(2);
         }
     };
 
     match client.connect() {
         Err(er) => {
-            print!("{}", er.to_string());
+            print!("[ER] {}", er.to_string());
             std::process::exit(2);
         },
-        _ => ()
+        Ok(_) => println!("[OK] Connected to your Discord client.")
     };
     
     match client.set_activity(activity::Activity::new()
@@ -62,19 +65,19 @@ fn main() {
             .small_text(&args.small_image_text.unwrap_or("skdhsdh".to_string()))
     )) {
         Err(er) => {
-            print!("{}", er.to_string());
+            print!("[ER] {}", er.to_string());
             std::process::exit(2);
         },
-        _ => ()
+        Ok(_) => println!("[OK] Activity set.")
     };
 
     std::thread::park();
 
     match client.close() {
         Err(er) => {
-            print!("{}", er.to_string());
+            print!("[ER] {}", er.to_string());
             std::process::exit(2);
         },
-        _ => ()
+        Ok(_) => println!("[OK] Connection closed.")
     };
 }
