@@ -1,5 +1,5 @@
 ## A simple CLI tool for Discord RPC status
-
+![](demo.png)
 ```txt
 Usage: simple-discord-rpc [OPTIONS]
 
