@@ -14,3 +14,18 @@ Options:
   -h, --help                                 Print help
   -V, --version                              Print version
 ```
+
+## Installation
+- From crates.io
+```bash
+cargo install simple-discord-rpc
+```
+
+- From source
+```bash
+# have rust build utils installed
+git clone https://github.com/DaBigBlob/simple-discord-rpc.git
+cargo build --release
+./target/release/simple-discord-rpc
+# this^ is your binary. rename/relocate as you wish
+```
