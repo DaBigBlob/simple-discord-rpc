@@ -4,25 +4,25 @@ use clap::Parser;
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 struct ClapCli {
-    #[arg(short, long = "client-id")]
+    #[arg(short = 'c', long = "client-id")]
     client_id: Option<String>,
 
-    #[arg(short, long = "state")]
+    #[arg(short = 's', long = "state")]
     state: Option<String>,
 
-    #[arg(short, long = "details")]
+    #[arg(short = 'd', long = "details")]
     details: Option<String>,
 
-    #[arg(short, long = "large-image-key")]
+    #[arg(short = 'K', long = "large-image-key")]
     large_image_key: Option<String>,
 
-    #[arg(short, long = "large-image-text")]
+    #[arg(short = 'T', long = "large-image-text")]
     large_image_text: Option<String>,
 
-    #[arg(short, long = "small-image-key")]
+    #[arg(short = 'k', long = "small-image-key")]
     small_image_key: Option<String>,
 
-    #[arg(short, long = "small-image-text")]
+    #[arg(short = 't', long = "small-image-text")]
     small_image_text: Option<String>
 }
 
