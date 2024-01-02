@@ -48,18 +48,18 @@ fn main() {
     };
     
     match client.set_activity(activity::Activity::new()
-    .state("A test")
-    .details("A placeholder")
+    .state(&args.state.unwrap_or("default state".to_string()))
+    .details(&args.details.unwrap_or("default details".to_string()))
     // .buttons(vec![activity::Button::new(
     //     "A button",
     //     "https://github.com",
     // )])
     .assets(
         activity::Assets::new()
-            .large_image("https://logseq.com/logo-with-border.5bf84f43.png")
-            .large_text("lol")
-            .small_image("https://logseq.com/logo-with-border.5bf84f43.png")
-            .small_text("lol")
+            .large_image(&args.large_image_key.unwrap_or("https://www.rust-lang.org/static/images/rust-logo-blk.png".to_string()))
+            .large_text(&args.large_image_text.unwrap_or("made with rust".to_string()))
+            .small_image(&args.small_image_key.unwrap_or("https://www.rust-lang.org/static/images/rust-logo-blk.png".to_string()))
+            .small_text(&args.small_image_text.unwrap_or("made with rust".to_string()))
     )) {
         Err(er) => {
             print!("{}", er.to_string());
