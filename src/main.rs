@@ -37,14 +37,14 @@ fn main() {
             c
         },
         Err(er) => {
-            print!("[ER] {}", er.to_string());
+            println!("[ER] {}", er.to_string());
             std::process::exit(2);
         }
     };
 
     match client.connect() {
         Err(er) => {
-            print!("[ER] {}", er.to_string());
+            println!("[ER] {}", er.to_string());
             std::process::exit(2);
         },
         Ok(_) => println!("[OK] Connected to your Discord client.")
@@ -65,7 +65,7 @@ fn main() {
             .small_text(&args.small_image_text.unwrap_or("skdhsdh".to_string()))
     )) {
         Err(er) => {
-            print!("[ER] {}", er.to_string());
+            println!("[ER] {}", er.to_string());
             std::process::exit(2);
         },
         Ok(_) => println!("[OK] Activity set.")
@@ -75,7 +75,7 @@ fn main() {
 
     match client.close() {
         Err(er) => {
-            print!("[ER] {}", er.to_string());
+            println!("[ER] {}", er.to_string());
             std::process::exit(2);
         },
         Ok(_) => println!("[OK] Connection closed.")
