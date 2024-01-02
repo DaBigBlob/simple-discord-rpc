@@ -29,7 +29,9 @@ struct ClapCli {
 fn main() {
     let args = ClapCli::parse();
 
-    let mut client = match DiscordIpcClient::new("771124766517755954") {
+    let mut client = match DiscordIpcClient::new(
+        &args.client_id.unwrap_or("1191646640000487476".to_string())
+    ) {
         Ok(c) => c,
         Err(er) => {
             print!("{}", er.to_string());
