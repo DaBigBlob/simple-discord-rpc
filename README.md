@@ -25,6 +25,7 @@ cargo install simple-discord-rpc
 ```bash
 # have rust build utils installed
 git clone https://github.com/DaBigBlob/simple-discord-rpc.git
+cd simple-discord-rpc
 cargo build --release
 ./target/release/simple-discord-rpc
 # this^ is your binary. rename/relocate as you wish
