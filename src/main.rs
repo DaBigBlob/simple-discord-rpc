@@ -1,12 +1,11 @@
 use discord_rich_presence::{activity, DiscordIpc, DiscordIpcClient};
-use std::error::Error;
 
-use clap::{Parser, builder::Str};
+use clap::Parser;
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 struct ClapCli {
     #[arg(short, long = "client-id")]
-    client_id: String,
+    client_id: Option<String>,
 
     #[arg(short, long = "state")]
     state: Option<String>,
@@ -28,6 +27,8 @@ struct ClapCli {
 }
 
 fn main() {
+    let args = ClapCli::parse();
+
     let mut client = match DiscordIpcClient::new("771124766517755954") {
         Ok(c) => c,
         Err(er) => {
